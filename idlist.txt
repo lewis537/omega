@@ -1,0 +1,28 @@
+Id list for Extension IDs
+
+GoGuardian: haldlgldplgnggkjaafhelgiaglafanh
+
+Securly (old): iheobagjkfklnlikgihanlhcddjoihkg
+
+Securly (new): joflmkccibkooplaeoinecjbmdebglab
+
+Blocksi: ghlpmldmjjhmdgmneoaibbegkjjbonbk
+
+iBoss: kmffehbidlalibfeklaefnckpidbodff
+
+Fortiguard: igbgpehnbmhgdgjbhkkpedommgmfbeao
+
+Cisco Umbrella: jcdhmojfecjfmbdpchihbeilohgnbdci
+
+NetRef: khfdeghnhlpdfeenmdofgcbilkngngcp
+
+ContentKeeper: jdogphakondfdmcanpapfahkdomaicfa
+
+Hapara: kbohafcopfpigkjdimdcdgenlhkmhbnc
+
+Smoothwall: jbldkhfglmgeihlcaeliadhipokhocnm
+
+Linewize: ddfbkhpmcdbciejenfcolaaiebnjcbfc
+
+LANSchool: baleiojnjpgeojohhhfbichcodgljmnj 
+
