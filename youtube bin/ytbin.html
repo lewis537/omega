@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Search</title>
+    <style>
+        button{
+            background-color: aqua;
+            color: blue;
+        }
+        select{
+            background-color: aqua;
+            color: blue;
+        }
+        body{
+            background-color: rgb(0, 167, 167);
+            color: rgb(0, 0, 151);
+        }
+        *{
+            text-align: center;
+            font-family: Helvetica, Standard; /*is a god-tier meme*/
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Youtube Recycle Bin</h1>
+    <!-- Section 1 -->
+    <label for="searchType1">Search Type 1:</label>
+    <select id="searchType1">
+        <option value="img">img</option>
+        <option value="mvi">mvi</option>
+        <option value="100">100</option>
+        <option value="dsc">dsc</option>
+        <option value="sam">sam</option>
+        <option value="wa0">wa0</option>
+        <option value="-hms-">-hms-</option>
+    </select>
+    <label for="searchType1">Filtered?</label>
+    <select id="Filtered">
+        <option value="&sp=EgIIAg%253D%253D">Yes</option>
+        <option value="">No</option>
+    </select>
+    <button onclick="searchYouTube1()">Go</button>
+
+
+        <!-- Section 2 -->
+        <br>
+        <label for="other">.[File Type] / other</label>
+        <select id="searchType3">
+            <option value="/Storage/Emulated">/Storage/Emulated</option>
+            <option value="FullSizeRender">FullSizeRender</option>
+            <option value=".mp4">.mp4</option>
+            <option value=".3gp">.3gp</option>
+            <option value=".mov">.mov</option>
+            <option value=".avi">.avi</option>
+            <option value=".wmv">.wmv</option>
+            <option value=".mkv">.mkv</option>
+            <option value=".flv">.flv</option>
+        </select>
+        <label for="other">Filtered?</label>
+        <select id="Filtered">
+            <option value="&sp=EgIIAg%253D%253D">Yes</option>
+            <option value="">No</option>
+        </select>
+        <button onclick="searchYouTube2()">Go</button>
+
+        
+        
+    <script>
+        // Section 1
+        function searchYouTube1() {
+            // Get the selected search type
+            var searchType = document.getElementById('searchType1').value;
+            var filtered = document.getElementById('Filtered').value;
+
+            // Generate a random number between 0000 and 9999
+            if (searchType=="wa0"){
+                var randomNumber = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            } else {
+                searchType=searchType+"+"
+                var randomNumber = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            }
+                
+            
+
+            // Update the search query URL based on the selected search type
+            var searchQueryURL = 'https://www.youtube.com/results?search_query=' + searchType + randomNumber + filtered;
+
+            // Open the updated URL in a new tab/window
+            window.open(searchQueryURL, '_blank');
+        }
+
+
+
+        // Section 2
+
+        function searchYouTube2() {
+
+            // Get the selected search type
+            var searchType = document.getElementById('searchType3').value;
+            var filtered = document.getElementById('Filtered').value;
+
+            // Update the search query URL based on the selected search type
+            var searchQueryURL = 'https://www.youtube.com/results?search_query=' + searchType + filtered;
+
+            // Open the updated URL in a new tab/window
+            window.open(searchQueryURL, '_blank');
+
+        }
+    </script>
+</body>
+</html>
