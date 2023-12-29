@@ -34,7 +34,6 @@
         <option value="dsc">dsc</option>
         <option value="sam">sam</option>
         <option value="wa0">wa0</option>
-        <option value="-hms-">-hms-</option>
     </select>
     <label for="searchType1">Filtered?</label>
     <select id="Filtered">
@@ -59,7 +58,7 @@
             <option value=".flv">.flv</option>
         </select>
         <label for="other">Filtered?</label>
-        <select id="Filtered">
+        <select id="Filtered2">
             <option value="&sp=EgIIAg%253D%253D">Yes</option>
             <option value="">No</option>
         </select>
@@ -99,7 +98,7 @@
 
             // Get the selected search type
             var searchType = document.getElementById('searchType3').value;
-            var filtered = document.getElementById('Filtered').value;
+            var filtered = document.getElementById('Filtered2').value;
 
             // Update the search query URL based on the selected search type
             var searchQueryURL = 'https://www.youtube.com/results?search_query=' + searchType + filtered;
