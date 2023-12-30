@@ -42,6 +42,8 @@ function playSound(note) {
     gainNode.gain.setValueAtTime(1, audioContext.currentTime);
     gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
 
-    bufferSource.detune.value = 1200 * Math.log2(pitch);
+    bufferSource.playbackRate.setValueAtTime(pitch, audioContext.currentTime);
+    bufferSource.detune.setValueAtTime(0, audioContext.currentTime);
+
     bufferSource.start();
 }
