@@ -1,9 +1,8 @@
 let audioContext;
-let audio;
+let bufferSource;
 
 function initAudioContext() {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audio = new Audio();
     document.removeEventListener('click', initAudioContext);
 }
 
@@ -15,14 +14,6 @@ function playSound(note) {
         return;
     }
 
-    const source = audioContext.createMediaElementSource(audio);
-    const gainNode = audioContext.createGain();
-    
-    source.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    audio.src = 'key.mp3';
-
     const pitchMap = {
         'C': 1.0,
         'Db': 1.05946,
@@ -32,11 +23,25 @@ function playSound(note) {
         // Add more notes and their pitch adjustments
     };
 
+    const pitch = pitchMap[note] || 1.0;
+
+    if (bufferSource) {
+        bufferSource.stop();
+        bufferSource.disconnect();
+    }
+
+    bufferSource = audioContext.createBufferSource();
+
+    const gainNode = audioContext.createGain();
+    const audioBuffer = audioContext.createBuffer(1, 1, audioContext.sampleRate);
+    
+    bufferSource.buffer = audioBuffer;
+    bufferSource.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
     gainNode.gain.setValueAtTime(1, audioContext.currentTime);
     gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
 
-    const pitch = pitchMap[note] || 1.0;
-    source.detune.value = 1200 * Math.log2(pitch);
-
-    audio.play();
+    bufferSource.detune.value = 1200 * Math.log2(pitch);
+    bufferSource.start();
 }
