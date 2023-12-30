@@ -1,7 +1,9 @@
 let audioContext;
+let audio;
 
 function initAudioContext() {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    audio = new Audio();
     document.removeEventListener('click', initAudioContext);
 }
 
@@ -13,14 +15,13 @@ function playSound(note) {
         return;
     }
 
-    const audio = new Audio();
     const source = audioContext.createMediaElementSource(audio);
     const gainNode = audioContext.createGain();
     
     source.connect(gainNode);
     gainNode.connect(audioContext.destination);
 
-    audio.src = 'key.mp3'; // Updated path to key.mp3
+    audio.src = 'key.mp3';
 
     const pitchMap = {
         'C': 1.0,
