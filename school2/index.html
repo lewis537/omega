@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #320d90;
+            color: aqua;
+        }
+    
+        a {
+            color: aqua;
+            font-family: 'monospace', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        #b {
+            color: rgb(234, 255, 0);
+            font-family: 'monospace', Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <p>yo</p>
+    <!DOCTYPE html>
+
+
+<!-- Textbox for entering website URL -->
+<label for="websiteUrl">ID (Use bing.com to see ID):</label>
+<input type="text" id="websiteUrl" placeholder="https://example.com">
+
+<!-- Button to create iframe -->
+<button onclick="loadWebsite()">Load Website</button>
+
+<!-- Container for iframe -->
+<div id="iframeContainer"></div>
+
+<script>
+    function loadWebsite() {
+        // Get the website URL from the textbox
+        var websiteUrl = document.getElementById('websiteUrl').value;
+
+        // Create an iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the source (website URL) for the iframe
+        iframe.src = "https://www.yo"+"u"+"t+"+"u"+"+be-nocookie.com/embed/"+websiteUrl+"?si=BjOm1LjNORUYHjp6";
+
+        // Set attributes for the iframe (you can customize these as needed)
+        iframe.width = '100%';
+        iframe.height = '700px';
+        iframe.frameBorder = '0';
+
+        // Append the iframe to the container
+        document.getElementById('iframeContainer').innerHTML = '';
+        document.getElementById('iframeContainer').appendChild(iframe);
+    }
+</script>
+
+
+</body>
+</html>
