@@ -1,0 +1,75 @@
+<html><head><base target="_blank"><base target="_blank"></head><body><button class="c-button">CLICK TO PLAY GARRYS MOD</button>
+    <style>
+    
+    body{
+        background-color: aqua;
+    }
+    .c-button {
+      overflow-y: hidden; 
+      min-width: 90%;
+      font-family: fantasy;
+      appearance: none;
+      border: 0;
+      border-radius: 5px;
+      background: #000000;
+      color: #fff;
+      padding: 0px 46px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .c-button:hover {
+      background: #320d90;
+    }
+    
+    .c-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px #cbd6ee;
+    }
+      
+     .c-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+    }
+    
+    </style><style class="darkreader darkreader--sync" media="screen"></style>
+    
+    <script>
+            //var urlObj = new window.URL(window.location.href);
+            const screenWidth = window.screen.width;  // Width of the screen
+            const screenHeight = window.screen.height;  // Height of the screen
+    
+            if (url) {
+                var win;
+    
+                document.querySelector('button').onclick = function() {
+                    if (win) {
+                        win.focus();
+                    } else {
+                        win = window.open();
+                        win.document.body.style.margin = '0';
+                        win.document.body.style.height = '100vh';
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.src = "https://app-284790.games.s3.yandex.net/284790/p5mi6zn7ehz4g9lsy49mp9kidcq0lc2w/index.html?header=no&clid=208377&sdk=%2Fsdk%2F_%2Fv2.3f4e7f1412a661a1f791.js#origin=https%3A%2F%2Fyandex.com&app-id=284790&device-type=desktop";
+                        win.document.body.appendChild(iframe);
+                        
+    
+                        var interval = setInterval(function() {
+                            if (win.closed) {
+                                clearInterval(interval);
+                                win = undefined;
+    
+                            }
+                        }, 500);
+    
+    
+                    }
+                };
+            }
+        </script></body></html>
