@@ -27,7 +27,7 @@
 
 
 <!-- Textbox for entering website URL -->
-<label for="websiteUrl">ID (Use bing.com to see ID):</label>
+<label for="websiteUrl">ID/URL:</label>
 <input type="text" id="websiteUrl" placeholder="https://example.com">
 
 <!-- Button to create iframe -->
@@ -35,28 +35,34 @@
 
 <!-- Container for iframe -->
 <div id="iframeContainer"></div>
-<i>For Lewis, Myself</i>
-starter pack:<br>
-zaqTI6d0I7I  TME
-9CIUrIZ7Omc  TME (distortion!)
-dQw4w9WgXcQ  Rickroll
-veqG2Fwh_yo  HP2
-o7MP5tcDMNY  the denial
+
 
 <script>
+    function getTextAfterDoubleUnderscore(str) {
+  const indexOfDoubleUnderscore = str.lastIndexOf("?v=");
+  if (indexOfDoubleUnderscore !== -1) {
+    return str.substring(indexOfDoubleUnderscore + 3); // Add 2 to skip the "__" characters
+  }
+  return ""; // Return empty string if "__" not found
+}
+
+
     function loadWebsite() {
         // Get the website URL from the textbox
         var websiteUrl = document.getElementById('websiteUrl').value;
 
         // Create an iframe element
         var iframe = document.createElement('iframe');
-
+        id=getTextAfterDoubleUnderscore(websiteUrl);
+        if (id===""){
         // Set the source (website URL) for the iframe
         iframe.src = "https://www.yo"+"u"+"t"+"u"+"be-nocookie.com/embed/"+websiteUrl+"?si=BjOm1LjNORUYHjp6";
-
+        } else {
+            iframe.src=id;
+        }
         // Set attributes for the iframe (you can customize these as needed)
         iframe.width = '100%';
-        iframe.height = '700px';
+        iframe.height = '500px';
         iframe.frameBorder = '0';
 
         // Append the iframe to the container
