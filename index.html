@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[OMEGA] Lewis 537</title>
+    <style>
+        button{
+            background-color: aqua;
+            color: blue;
+        }
+        select{
+            background-color: aqua;
+            color: blue;
+        }
+        body{
+            background-color: rgb(0, 167, 167);
+            color: rgb(0, 0, 151);
+        }
+        *{
+            text-align: center;
+            font-family: Helvetica;
+        }
+    </style>
 </head>
 <body>
+    <svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(32,13,93);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(91,77,182);stop-opacity:1"></stop>
+          </linearGradient>
+          <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(32,13,93);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(91,77,182);stop-opacity:1"></stop>
+          </linearGradient>
+          <linearGradient id="grad3" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(32,13,93);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(91,77,182);stop-opacity:1"></stop>
+          </linearGradient>
+        </defs>
+        
+        <polygon points="30,2 38,32 28,60 38,88 30,98" fill="url(#grad1)"></polygon>
+        <polygon points="38,32 46,2 54,32 64,60 54,88" fill="url(#grad2)"></polygon>
+        <polygon points="54,32 62,2 70,32 80,60 70,88" fill="url(#grad3)"></polygon>
+        <polygon points="70,32 78,2 86,32 96,60 86,88" fill="url(#grad1)"></polygon>
+        <polygon points="46,32 54,62 62,32 70,62 62,92" fill="url(#grad2)"></polygon>
+        <polygon points="62,32 70,62 78,32 86,62 78,92" fill="url(#grad3)"></polygon>
+        <polygon points="78,32 86,62 94,32 102,62 94,92" fill="url(#grad1)"></polygon>
+      </svg>
     <div style="text-align: center;">
     <button style="background-color: greenyellow; color:blueviolet; border: none; font-family: monospace;"><a href="lewistub/index.html">LEWIS-TUBE</a></button><br>
     <button style="background-color: greenyellow; color:blueviolet; border: none; font-family: monospace;"><a href="games/games.html">GAMES</a></button><br>
