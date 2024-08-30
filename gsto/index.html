@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Search Generator</title>
+    <style>
+        body{
+          background-image: url('/../gradient.png');
+    background-size: 100% 100%; /* Stretch the background image to cover the entire background */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+            /*background-color: rgb(0, 167, 167);
+            color: rgb(0, 0, 151);*/
+        }
+        *{
+            font-family: Helvetica;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Search Throw Off</h1>
+    <select id="userChoice">
+        <option value="why do">Why Do</option>
+        <option value="why am i">Why Am I</option>
+        <option value="gibberish">Gibberish</option>
+    </select>
+    <br>
+    How many times to open: <input type="number" id="times">
+    <br>
+    <button id="triggerBtn">Submit</button>
+
+    <script>
+        const nouns = ['cat', 'dog', 'apple', 'car', 'house', 'tree', 'book', 'computer'];
+        const verbs = ["ask", "be", "become", "begin", "believe", "bring", "build", "buy",
+    "call", "change", "come", "consider", "continue", "could", "create",
+    "decide", "do", "expect", "find", "follow", "get", "give", "go",
+    "have", "help", "hope", "know", "learn", "leave", "let", "like",
+    "look", "make", "mean", "might", "move", "need", "offer", "open",
+    "pass", "play", "put", "read", "run", "say", "see", "seem",
+    "should", "start", "take"];
+    const adjectives = [
+    "good", "big", "small", "bad", "hot", "cold", "happy", "beautiful", "open", "near",
+    "closed", "new", "old", "clean", "strong", "young", "expensive", "early", "fast", 
+    "dark", "delicious", "soft", "dirty", "empty", "far", "sad", "free", "full", 
+    "funny", "hard", "heavy", "hungry", "interesting", "kind", "late", "loud", 
+    "light", "quiet", "ready", "slow", "smart", "tall", "thirsty", "ugly", "weak", 
+    "bright", "short", "serious", "stupid", "honest"
+]
+        // Function to get a random item from an array
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        // Function to open Google searches
+        function openSearches1(query, numTimes) {
+
+            for (let i = 0; i < numTimes; i++) {
+                const randomNoun = getRandomItem(nouns);
+                const randomVerb = getRandomItem(verbs);
+                const randomAdjective = getRandomItem(adjectives);
+                const searchQuery = `${query} ${randomNoun}s ${randomVerb} ${randomAdjective}ly?`;
+                window.open(`https://www.google.com/search?q=${searchQuery}`, '_blank');
+            }
+        }
+        function openSearches2(query, numTimes) {
+
+            for (let i = 0; i < numTimes; i++) {
+                const randomVerb = getRandomItem(verbs);
+                const searchQuery = `${query} ${randomVerb}ing?`;
+                window.open(`https://www.google.com/search?q=${searchQuery}`, '_blank');
+            }
+        }
+        function openSearches3( numTimes) {
+            for (let i = 0; i < numTimes; i++) {
+                const searchQuery = `${Math.random().toString(36).substring(7)}?`;
+                window.open(`https://www.google.com/search?q=${searchQuery}`, '_blank');
+            }
+        }
+        // Function to handle user choice and trigger corresponding action
+        function triggerAction() {
+            const userChoice = document.getElementById('userChoice').value;
+            const opens = document.getElementById('times').value;
+            if (userChoice === 'why do') {
+                openSearches1(userChoice, opens);
+            } else if (userChoice === 'why am i') {
+                openSearches2(userChoice,opens)
+            } else if (userChoice === 'gibberish') {
+                openSearches3(opens)
+            }
+        }
+
+        // Event listener for button
+        document.getElementById('triggerBtn').addEventListener('click', triggerAction);
+    </script>
+</body>
+</html>
