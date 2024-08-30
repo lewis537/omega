@@ -31,15 +31,16 @@
     <button id="triggerBtn">Submit</button>
 
     <script>
-        const nouns = ['cat', 'dog', 'apple', 'car', 'house', 'tree', 'book', 'computer'];
-        const verbs = ["ask", "be", "become", "begin", "believe", "bring", "build", "buy",
+        console.log("Changeable Vars:\nnouns, verbs, adjectives, opens, userchoice")
+        var nouns = ['cat', 'dog', 'apple', 'car', 'house', 'tree', 'book', 'computer'];
+        var verbs = ["ask", "be", "become", "begin", "believe", "bring", "build", "buy",
     "call", "change", "come", "consider", "continue", "could", "create",
     "decide", "do", "expect", "find", "follow", "get", "give", "go",
     "have", "help", "hope", "know", "learn", "leave", "let", "like",
     "look", "make", "mean", "might", "move", "need", "offer", "open",
     "pass", "play", "put", "read", "run", "say", "see", "seem",
     "should", "start", "take"];
-    const adjectives = [
+    var adjectives = [
     "good", "big", "small", "bad", "hot", "cold", "happy", "beautiful", "open", "near",
     "closed", "new", "old", "clean", "strong", "young", "expensive", "early", "fast", 
     "dark", "delicious", "soft", "dirty", "empty", "far", "sad", "free", "full", 
@@ -79,8 +80,8 @@
         }
         // Function to handle user choice and trigger corresponding action
         function triggerAction() {
-            const userChoice = document.getElementById('userChoice').value;
-            const opens = document.getElementById('times').value;
+            var userChoice = document.getElementById('userChoice').value;
+            var opens = document.getElementById('times').value;
             if (userChoice === 'why do') {
                 openSearches1(userChoice, opens);
             } else if (userChoice === 'why am i') {
